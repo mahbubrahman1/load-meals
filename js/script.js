@@ -4,7 +4,7 @@ const searchFood = () => {
     const searchText = searchField.value;
     searchField.value = '';
     if (searchText == '') {
-        //..........
+        alert('Please enter meal name. For example: fish, meat, rice etc.');
     } else {
         const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
         fetch(url)
@@ -18,7 +18,10 @@ const displaySearchResult = meals => {
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
     if (meals.length == 0) {
-        //..........
+        // const notFound = document.getElementById('not-found');
+        // const h2 = document.createElement('h2');
+        // h2.innerText = 'Not Found';
+        // notFound.appendChild(h2);
     }
     meals.forEach(meal => {
         const div = document.createElement('div');
@@ -59,4 +62,4 @@ const displayMealDetail = meal => {
         </div>
     `;
     mealDetails.appendChild(div);
-}
+};
